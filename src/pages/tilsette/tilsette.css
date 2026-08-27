@@ -1,0 +1,1867 @@
+/* =========================================================
+   MOWISHIFT — TILSETTE
+   Complete page styles.
+   Arbeid = empty.
+   Historikk = period/calendar/statistics/chart only.
+========================================================= */
+
+.tilsette-page {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  color: #253247;
+  font-size: 13px;
+}
+
+.tilsette-page *,
+.tilsette-page *::before,
+.tilsette-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   TOP ADMIN / EMPLOYEE TABS
+========================================================= */
+
+.tilsette-top-tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  height: 42px;
+  padding: 0 0 0 2px;
+  border-bottom: 1px solid #e4e9f0;
+}
+
+.tilsette-top-tab {
+  height: 42px;
+  padding: 0 2px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: #647187;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tilsette-top-tab.active {
+  color: #0f63d7;
+  border-bottom-color: #0f63d7;
+}
+
+/* =========================================================
+   FILTER / SEARCH TOOLBAR
+========================================================= */
+
+.tilsette-toolbar {
+  width: 100%;
+  display: grid;
+  grid-template-columns:
+    minmax(240px, 1.35fr) minmax(150px, 1fr) minmax(150px, 1fr)
+    minmax(150px, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.tilsette-search {
+  position: relative;
+  min-width: 0;
+}
+
+.tilsette-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  color: #7b8799;
+  pointer-events: none;
+}
+
+.tilsette-search-input {
+  width: 100%;
+  height: 38px !important;
+  padding-left: 36px !important;
+  border: 1px solid #d8e0ea !important;
+  border-radius: 7px !important;
+  background: #fff !important;
+  color: #263246 !important;
+  font-size: 12px !important;
+  box-shadow: none !important;
+}
+
+.tilsette-search-input:focus {
+  border-color: #8db6ed !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(23, 105, 224, 0.08) !important;
+}
+
+.filter-select-trigger {
+  width: 100% !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  border: 1px solid #d8e0ea !important;
+  border-radius: 7px !important;
+  background: #fff !important;
+  color: #3d4a5d !important;
+  font-size: 12px !important;
+  box-shadow: none !important;
+}
+
+.tilsette-filter-button {
+  height: 38px !important;
+  padding: 0 13px !important;
+  gap: 6px;
+  border-color: #d8e0ea !important;
+  border-radius: 7px !important;
+  color: #3b4a5f !important;
+  background: #fff !important;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   EMPLOYEE LIST + DETAIL
+========================================================= */
+
+.tilsette-layout {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 310px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.tilsette-list-card {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #dfe6ef;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.tilsette-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-list-row {
+  width: 100%;
+  min-height: 68px;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 0;
+  border-bottom: 1px solid #edf1f5;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.employee-list-row:hover {
+  background: #f8fafc;
+}
+
+.employee-list-row.selected {
+  background: #eef6ff;
+  box-shadow: inset 3px 0 0 #1769e0;
+}
+
+.employee-list-avatar {
+  width: 38px !important;
+  height: 38px !important;
+  flex: 0 0 38px;
+  border: 1px solid #e2e8f0;
+  background: #edf2f7 !important;
+  color: #31415a !important;
+}
+
+.employee-list-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.employee-list-copy strong {
+  overflow: hidden;
+  color: #253247;
+  font-size: 12px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.employee-list-copy span {
+  overflow: hidden;
+  color: #68768a;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.employee-status-badge {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.show-all-employees {
+  width: 100%;
+  height: 42px;
+  border: 0;
+  background: #fff;
+  color: #2768b7;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.show-all-employees:hover {
+  background: #f7faff;
+}
+
+.employee-detail {
+  min-width: 0;
+}
+
+/* =========================================================
+   EMPLOYEE HEADER
+========================================================= */
+
+.employee-header-card {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #dfe6ef !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  box-shadow: 0 1px 2px rgba(30, 48, 75, 0.04) !important;
+}
+
+.employee-header-content {
+  min-height: 104px;
+  display: grid !important;
+  grid-template-columns: minmax(250px, 1.2fr) minmax(230px, 1fr) 150px 32px;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 18px !important;
+}
+
+.employee-header-main {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.employee-header-avatar {
+  width: 58px !important;
+  height: 58px !important;
+  flex: 0 0 58px;
+  border: 1px solid #dfe7f0;
+  background: #edf3f8 !important;
+  color: #31415a !important;
+}
+
+.employee-title-block {
+  min-width: 0;
+}
+
+.employee-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.employee-title-row h1 {
+  margin: 0;
+  overflow: hidden;
+  color: #172238;
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.employee-title-block p {
+  margin: 5px 0 4px;
+  color: #536278;
+  font-size: 11px;
+}
+
+.employee-title-block > span {
+  color: #8190a3;
+  font-size: 9px;
+}
+
+.employee-contact-block {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.employee-contact-block div {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  overflow: hidden;
+  color: #536278;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.employee-contact-block svg {
+  flex: 0 0 auto;
+  color: #708097;
+}
+
+.employee-header-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: #7a8798;
+  font-size: 9px;
+}
+
+.employee-header-meta strong {
+  margin-bottom: 6px;
+  color: #354257;
+  font-size: 10px;
+}
+
+.employee-header-content > button {
+  justify-self: end;
+  color: #66758a !important;
+}
+
+/* =========================================================
+   EMPLOYEE DETAIL TABS
+========================================================= */
+
+.employee-tabs {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 40px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e4e9f0;
+  overflow-x: auto;
+}
+
+.employee-tabs button {
+  height: 40px;
+  flex: 0 0 auto;
+  padding: 0 13px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: #647187;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.employee-tabs button:hover {
+  color: #245f9f;
+}
+
+.employee-tabs button.active {
+  color: #1769e0;
+  border-bottom-color: #1769e0;
+}
+
+/* =========================================================
+   GENERIC CARDS / OVERVIEW
+========================================================= */
+
+.overview-grid {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 250px;
+  gap: 12px;
+  align-items: start;
+}
+
+.info-card {
+  min-width: 0;
+  border: 1px solid #dfe6ef !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  box-shadow: 0 1px 2px rgba(30, 48, 75, 0.04) !important;
+}
+
+.info-card-header {
+  padding: 11px 13px 7px !important;
+}
+
+.info-card-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #31415a;
+}
+
+.info-card-title > svg {
+  flex: 0 0 auto;
+  color: #65758b;
+}
+
+.info-card-title [data-slot="card-title"],
+.info-card-title h3 {
+  margin: 0 !important;
+  color: #31415a !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+}
+
+.info-card-content {
+  padding: 0 13px 13px !important;
+}
+
+.info-row {
+  min-height: 27px;
+  display: grid;
+  grid-template-columns: minmax(95px, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #edf1f5;
+  color: #718095;
+  font-size: 9px;
+}
+
+.info-row:last-child {
+  border-bottom: 0;
+}
+
+.info-row > strong {
+  min-width: 0;
+  color: #354257;
+  font-size: 9px;
+  font-weight: 650;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.muted-note {
+  margin: 8px 0 0;
+  color: #8a96a7;
+  font-size: 8px;
+}
+
+.approval-highlight {
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 2px;
+  padding: 6px 8px;
+  border-radius: 5px;
+  background: #eaf8f1;
+  color: #557365;
+  font-size: 9px;
+}
+
+.section-divider {
+  height: 1px;
+  margin: 8px 0;
+  background: #e9edf2;
+}
+
+.mini-heading {
+  margin: 0 0 4px;
+  color: #526174;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #2169c3;
+  font: inherit;
+  cursor: pointer;
+}
+
+.full-button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.warning-card {
+  min-width: 0;
+}
+
+.warning-card .info-card-title {
+  color: #d88912;
+}
+
+.warning-item {
+  display: flex;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1e6d1;
+  color: #d88912;
+}
+
+.warning-item:last-child {
+  border-bottom: 0;
+}
+
+.warning-item > svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+
+.warning-item > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.warning-item strong {
+  color: #77541f;
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+.warning-item span {
+  color: #8b7a5c;
+  font-size: 8px;
+}
+
+/* Overview card placement */
+.overview-grid > .warning-card {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.overview-grid > .warning-card + .info-card {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.overview-grid > .warning-card ~ .history-card {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   ABSENCE TABLE
+========================================================= */
+
+.absence-table {
+  width: 100%;
+}
+
+.absence-table-header,
+.absence-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.7fr 1.5fr 0.8fr;
+  gap: 7px;
+  align-items: center;
+}
+
+.absence-table-header {
+  min-height: 26px;
+  color: #7d8999;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.absence-row {
+  min-height: 29px;
+  border-top: 1px solid #edf1f5;
+  color: #59677a;
+  font-size: 8px;
+}
+
+.absence-row strong {
+  color: #3b485c;
+  font-size: 8px;
+}
+
+/* =========================================================
+   HISTORY TABLE USED BY OVERVIEW APPROVAL HISTORY
+========================================================= */
+
+.history-card {
+  min-width: 0;
+}
+
+.history-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.history-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.history-header,
+.history-row {
+  min-width: 700px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.7fr 0.9fr 0.7fr 1.4fr 0.8fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.history-header {
+  min-height: 28px;
+  color: #7b8798;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.history-row {
+  min-height: 36px;
+  border-top: 1px solid #edf1f5;
+  color: #536176;
+  font-size: 8px;
+}
+
+.history-row strong {
+  color: #3b485b;
+  font-size: 8px;
+}
+
+/* =========================================================
+   TAB GRID
+========================================================= */
+
+.tab-grid {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+
+.tab-grid.single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.documents-list {
+  width: 100%;
+  display: grid;
+  gap: 8px;
+}
+
+.document-row {
+  min-height: 62px;
+  display: grid !important;
+  grid-template-columns: 38px minmax(0, 1fr) 32px;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 13px !important;
+}
+
+.document-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background: #eef4fb;
+  color: #3570b8;
+}
+
+.document-row > div:nth-child(2) {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.document-row strong {
+  overflow: hidden;
+  color: #344257;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.document-row span {
+  color: #7a8798;
+  font-size: 8px;
+}
+
+/* =========================================================
+   ARBEID TAB
+========================================================= */
+
+.arbeid-tab {
+  width: 100%;
+  min-width: 0;
+  padding: 0 0 18px;
+}
+
+/* HEADER */
+
+.arbeid-tab-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.arbeid-tab-header > div {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.arbeid-tab-header h2 {
+  margin: 0;
+  color: #263246;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.arbeid-tab-header > div > span {
+  color: #718096;
+  font-size: 10px;
+}
+
+.arbeid-change-button {
+  height: 34px !important;
+  min-height: 34px !important;
+  padding: 0 14px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+
+  border: 1px solid #1769e0 !important;
+  border-radius: 6px !important;
+
+  background: #1769e0 !important;
+  color: #ffffff !important;
+
+  font-size: 10px !important;
+  font-weight: 650 !important;
+}
+
+.arbeid-change-button:hover {
+  background: #125bc3 !important;
+}
+
+/* MAIN GRID */
+
+.arbeid-content-grid {
+  width: 100%;
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+
+  gap: 12px;
+  align-items: start;
+}
+
+/* =========================================================
+   WEEK PLAN
+========================================================= */
+
+.arbeid-week-card {
+  min-width: 0;
+
+  border: 1px solid #dfe6ef !important;
+  border-radius: 8px !important;
+
+  background: #ffffff !important;
+
+  box-shadow: 0 1px 2px rgba(30, 48, 75, 0.04) !important;
+}
+
+.arbeid-week-content {
+  padding: 0 !important;
+}
+
+/* DAY ROW */
+
+.arbeid-day-row {
+  width: 100%;
+  min-height: 76px;
+
+  display: grid;
+
+  grid-template-columns:
+    92px
+    minmax(0, 1fr)
+    55px
+    76px;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 14px;
+
+  border-bottom: 1px solid #edf1f5;
+}
+
+.arbeid-day-row:last-of-type {
+  border-bottom: 0;
+}
+
+/* DAY */
+
+.arbeid-day {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.arbeid-day strong {
+  color: #263246;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.arbeid-day span {
+  color: #718096;
+  font-size: 8px;
+}
+
+/* SHIFT */
+
+.arbeid-shift {
+  min-width: 0;
+}
+
+.arbeid-shift-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arbeid-shift-main strong {
+  color: #263246;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.arbeid-shift-details {
+  margin-top: 5px;
+  padding-left: 15px;
+
+  overflow: hidden;
+
+  color: #59677a;
+  font-size: 9px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* STATUS DOT */
+
+.arbeid-status-dot {
+  width: 7px;
+  height: 7px;
+  min-width: 7px;
+
+  border-radius: 50%;
+}
+
+.arbeid-status-dot.planned {
+  background: #22a45b;
+}
+
+.arbeid-status-dot.worked {
+  background: #1769e0;
+}
+
+.arbeid-status-dot.free {
+  background: #aeb7c4;
+}
+
+.arbeid-status-dot.approved {
+  background: #ef971e;
+}
+
+.arbeid-status-dot.rejected {
+  background: #e63b48;
+}
+
+/* HOURS */
+
+.arbeid-hours {
+  color: #3d495b;
+  font-size: 10px;
+  font-weight: 650;
+  text-align: right;
+}
+
+/* STATUS BADGE */
+
+.arbeid-status {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.arbeid-status-badge {
+  min-width: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  font-size: 8px;
+  font-weight: 650;
+}
+
+.arbeid-status-badge.planned {
+  background: #dcf7e9;
+  color: #159650;
+}
+
+.arbeid-status-badge.worked {
+  background: #e4efff;
+  color: #1769e0;
+}
+
+.arbeid-status-badge.free {
+  background: #eef1f5;
+  color: #68758a;
+}
+
+.arbeid-status-badge.approved {
+  background: #fff0d9;
+  color: #c87b09;
+}
+
+.arbeid-status-badge.rejected {
+  background: #ffe6e8;
+  color: #d42f3d;
+}
+
+/* =========================================================
+   LEGEND
+========================================================= */
+
+.arbeid-legend {
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+  padding: 0 14px;
+
+  border-top: 1px solid #edf1f5;
+}
+
+.arbeid-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #68758a;
+  font-size: 8px;
+}
+
+.legend-dot {
+  width: 7px;
+  height: 7px;
+  min-width: 7px;
+
+  display: inline-block;
+
+  border-radius: 50%;
+}
+
+.legend-dot.planned {
+  background: #22a45b;
+}
+
+.legend-dot.worked {
+  background: #1769e0;
+}
+
+.legend-dot.approved {
+  background: #ef971e;
+}
+
+.legend-dot.rejected {
+  background: #e63b48;
+}
+
+.legend-dot.free {
+  background: #c4cad3;
+}
+
+/* =========================================================
+   RIGHT COLUMN
+========================================================= */
+
+.arbeid-side-column {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.arbeid-side-card {
+  min-width: 0;
+
+  border: 1px solid #dfe6ef !important;
+  border-radius: 8px !important;
+
+  background: #ffffff !important;
+
+  box-shadow: 0 1px 2px rgba(30, 48, 75, 0.04) !important;
+}
+
+.arbeid-side-header {
+  padding: 12px 13px 6px !important;
+}
+
+.arbeid-side-header [data-slot="card-title"] {
+  margin: 0 !important;
+
+  color: #293548 !important;
+
+  font-size: 11px !important;
+  font-weight: 700 !important;
+}
+
+.arbeid-side-content {
+  padding: 5px 13px 13px !important;
+}
+
+/* SUMMARY */
+
+.arbeid-summary-row {
+  min-height: 31px;
+
+  display: grid;
+
+  grid-template-columns: 18px 65px minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 6px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  color: #68758a;
+  font-size: 8px;
+}
+
+.arbeid-summary-row:last-child {
+  border-bottom: 0;
+}
+
+.arbeid-summary-row svg {
+  color: #65758b;
+}
+
+.arbeid-summary-row strong {
+  color: #354257;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   NEXT WORK DAY
+========================================================= */
+
+.next-work-row {
+  min-height: 30px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #536176;
+  font-size: 9px;
+}
+
+.next-work-row svg {
+  flex: 0 0 auto;
+
+  color: #65758b;
+}
+
+.next-work-row span {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   LAST CHANGE
+========================================================= */
+
+.last-change-content {
+  padding: 6px 13px 13px !important;
+}
+
+.last-change-top {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.last-change-avatar {
+  width: 32px !important;
+  height: 32px !important;
+
+  background: #eaf0fb !important;
+  color: #52678d !important;
+
+  font-size: 9px !important;
+  font-weight: 700 !important;
+}
+
+.last-change-top > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.last-change-top strong {
+  color: #344156;
+  font-size: 8px;
+}
+
+.last-change-top span {
+  color: #7a8798;
+  font-size: 8px;
+}
+
+.last-change-value {
+  margin-top: 8px;
+
+  color: #6b7789;
+
+  font-size: 9px;
+}
+
+.last-change-value strong {
+  color: #354257;
+}
+
+.last-change-author {
+  margin-top: 6px;
+
+  color: #8a95a5;
+
+  font-size: 8px;
+}
+
+/* =========================================================
+   EMPTY WORK TAB PROTECTION
+========================================================= */
+
+.arbeid-empty {
+  display: none;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+  .arbeid-content-grid {
+    grid-template-columns: minmax(0, 1fr) 230px;
+  }
+
+  .arbeid-day-row {
+    grid-template-columns:
+      78px
+      minmax(0, 1fr)
+      45px
+      65px;
+  }
+}
+
+@media (max-width: 850px) {
+  .arbeid-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .arbeid-side-column {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .arbeid-tab-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .arbeid-tab-header > div {
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .arbeid-day-row {
+    grid-template-columns:
+      70px
+      minmax(0, 1fr)
+      55px;
+  }
+
+  .arbeid-status {
+    display: none;
+  }
+
+  .arbeid-side-column {
+    grid-template-columns: 1fr;
+  }
+
+  .arbeid-legend {
+    gap: 8px 12px;
+  }
+}
+
+/* =========================================================
+   HISTORIKK — FIXED MOCKUP
+========================================================= */
+
+.historikk-work-overview {
+  width: 100%;
+  min-width: 0;
+  display: block;
+  box-sizing: border-box;
+  padding: 0 0 20px;
+}
+
+.historikk-work-overview .arbeid-toolbar {
+  width: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.historikk-work-overview .arbeid-period {
+  min-width: 0;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.historikk-work-overview .arbeid-period > span {
+  color: #526174;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.historikk-work-overview .arbeid-period > strong {
+  color: #3d4859;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.historikk-work-overview .arbeid-period-select {
+  width: 125px !important;
+  height: 32px !important;
+  min-height: 32px !important;
+  font-size: 10px !important;
+}
+
+.historikk-work-overview .arbeid-icon-button {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  border: 1px solid #d7e0ea;
+  border-radius: 6px;
+  background: #fff;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.historikk-work-overview .arbeid-period-buttons {
+  flex: 0 0 auto;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 6px;
+}
+
+.historikk-work-overview .arbeid-period-buttons button {
+  height: 32px !important;
+  min-height: 32px !important;
+  padding: 0 11px !important;
+  border-radius: 6px !important;
+  font-size: 9px !important;
+  white-space: nowrap;
+}
+
+.historikk-work-overview .arbeid-active-period {
+  background: #1769e0 !important;
+  border-color: #1769e0 !important;
+  color: #fff !important;
+}
+
+/* Main calendar + right side */
+.historikk-work-overview .arbeid-main-grid {
+  width: 100%;
+  min-width: 0;
+  display: grid !important;
+  grid-template-columns: minmax(360px, 42%) minmax(0, 58%) !important;
+  gap: 12px !important;
+  align-items: stretch !important;
+}
+
+.historikk-work-overview .arbeid-calendar-card,
+.historikk-work-overview .arbeid-department-card {
+  min-width: 0;
+  border: 1px solid #dfe6ef !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  box-shadow: 0 1px 2px rgba(30, 48, 75, 0.04) !important;
+}
+
+.historikk-work-overview .arbeid-card-header {
+  padding: 12px 14px 8px !important;
+}
+
+.historikk-work-overview .arbeid-card-header h3,
+.historikk-work-overview .arbeid-card-header [data-slot="card-title"] {
+  margin: 0 !important;
+  color: #293548 !important;
+  font-size: 11px !important;
+  line-height: 1.3 !important;
+  font-weight: 700 !important;
+}
+
+.historikk-work-overview .arbeid-calendar-content {
+  width: 100%;
+  padding: 0 10px 12px !important;
+}
+
+/* Calendar */
+.historikk-work-overview .arbeid-weekdays {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+  align-items: center;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.historikk-work-overview .arbeid-weekdays span {
+  height: 30px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  color: #657185;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.historikk-work-overview .arbeid-calendar-grid {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(5, 46px) !important;
+  grid-auto-flow: row !important;
+}
+
+.historikk-work-overview .arbeid-calendar-day {
+  position: relative;
+  min-width: 0;
+  min-height: 46px;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-bottom: 1px solid #f0f2f5;
+  color: #384356;
+  font-size: 9px;
+}
+
+.historikk-work-overview .arbeid-calendar-day > span:first-child {
+  display: block !important;
+}
+
+.historikk-work-overview .arbeid-calendar-day.muted {
+  color: #c8cdd5;
+}
+
+.historikk-work-overview .arbeid-calendar-day.absence-approved {
+  background: #fff8e8;
+}
+
+.historikk-work-overview .arbeid-calendar-day.absence-rejected {
+  background: #fff0f0;
+}
+
+.historikk-work-overview .calendar-status-dot {
+  position: absolute !important;
+  bottom: 7px;
+  width: 5px !important;
+  height: 5px !important;
+  min-width: 5px !important;
+  min-height: 5px !important;
+  border-radius: 50% !important;
+}
+
+.historikk-work-overview .worked-dot {
+  background: #24a35a !important;
+}
+
+.historikk-work-overview .approved-dot {
+  background: #e7a12c !important;
+}
+
+.historikk-work-overview .rejected-dot {
+  background: #e63e49 !important;
+}
+
+.historikk-work-overview .arbeid-calendar-legend {
+  width: 100%;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  flex-wrap: wrap !important;
+  gap: 12px;
+  padding: 10px 2px 0;
+}
+
+.historikk-work-overview .arbeid-calendar-legend span {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 5px;
+  color: #667386;
+  font-size: 8px;
+  white-space: nowrap;
+}
+
+.historikk-work-overview .legend-dot {
+  display: inline-block !important;
+  width: 6px !important;
+  height: 6px !important;
+  min-width: 6px !important;
+  min-height: 6px !important;
+  border-radius: 50% !important;
+}
+
+.historikk-work-overview .legend-dot.worked {
+  background: #24a35a;
+}
+
+.historikk-work-overview .legend-dot.approved {
+  background: #e7a12c;
+}
+
+.historikk-work-overview .legend-dot.rejected {
+  background: #e63e49;
+}
+
+.historikk-work-overview .legend-line {
+  display: inline-block !important;
+  width: 8px;
+  height: 1px;
+  background: #aeb6c2;
+}
+
+/* Right side */
+.historikk-work-overview .arbeid-right-column {
+  width: 100%;
+  min-width: 0;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+/* Five statistics */
+.historikk-work-overview .arbeid-stat-grid {
+  width: 100%;
+  min-width: 0;
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+}
+
+.historikk-work-overview .arbeid-stat-card {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #e1e6ed !important;
+  border-radius: 8px !important;
+  background: #fff !important;
+  box-shadow: 0 1px 2px rgba(30, 48, 75, 0.04) !important;
+}
+
+.historikk-work-overview .arbeid-stat-card > div {
+  min-height: 112px;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 9px 5px !important;
+  text-align: center;
+}
+
+.historikk-work-overview .arbeid-stat-icon {
+  width: 24px;
+  height: 24px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.historikk-work-overview .arbeid-stat-value {
+  color: #263143;
+  font-size: 17px !important;
+  line-height: 1.1 !important;
+}
+
+.historikk-work-overview .arbeid-stat-label {
+  margin-top: 6px;
+  color: #687487;
+  font-size: 8px !important;
+  line-height: 1.3 !important;
+}
+
+.historikk-work-overview .arbeid-stat-secondary {
+  margin-top: 4px;
+  color: #7d8796;
+  font-size: 8px !important;
+}
+
+.historikk-work-overview .arbeid-stat-card.worked .arbeid-stat-icon {
+  background: #e5f7ed;
+  color: #1e9b55;
+}
+
+.historikk-work-overview .arbeid-stat-card.approved .arbeid-stat-icon {
+  background: #fff3df;
+  color: #df9726;
+}
+
+.historikk-work-overview .arbeid-stat-card.rejected .arbeid-stat-icon {
+  background: #ffe9eb;
+  color: #e33c49;
+}
+
+.historikk-work-overview .arbeid-stat-card.planned .arbeid-stat-icon {
+  background: #edf0f5;
+  color: #68758a;
+}
+
+.historikk-work-overview .arbeid-stat-card.total {
+  border-color: #cbdcf6 !important;
+}
+
+.historikk-work-overview .arbeid-stat-card.total .arbeid-stat-icon {
+  background: #e8f0ff;
+  color: #216de1;
+}
+
+.historikk-work-overview .arbeid-stat-card.total .arbeid-stat-value {
+  color: #216de1;
+}
+
+/* Department chart */
+.historikk-work-overview .arbeid-department-content {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: 190px minmax(0, 1fr) !important;
+  gap: 20px !important;
+  align-items: center !important;
+  min-height: 220px;
+  padding: 8px 16px 15px !important;
+}
+
+.historikk-work-overview .arbeid-chart {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.historikk-work-overview .arbeid-donut {
+  position: relative;
+  width: 145px;
+  height: 145px;
+  flex: 0 0 145px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #e9363e 0deg 236deg,
+    #ee951f 236deg 321deg,
+    #416bb2 321deg 360deg
+  );
+}
+
+.historikk-work-overview .arbeid-donut::after {
+  content: "";
+  position: absolute;
+  inset: 25px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.historikk-work-overview .arbeid-donut-center {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.historikk-work-overview .arbeid-donut-center strong {
+  color: #263143;
+  font-size: 17px;
+  line-height: 1.1;
+}
+
+.historikk-work-overview .arbeid-donut-center span {
+  margin-top: 4px;
+  color: #7b8594;
+  font-size: 9px;
+}
+
+/* Department table */
+.historikk-work-overview .arbeid-department-table {
+  width: 100%;
+  min-width: 0;
+}
+
+.historikk-work-overview .department-table-head {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: minmax(130px, 1fr) 80px 80px !important;
+  gap: 8px;
+  align-items: center;
+  padding-bottom: 8px;
+  color: #7d8796;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.historikk-work-overview .department-row {
+  width: 100%;
+  min-height: 34px;
+  display: grid !important;
+  grid-template-columns: minmax(130px, 1fr) 80px 80px !important;
+  gap: 8px;
+  align-items: center;
+  border-top: 1px solid #edf0f4;
+  color: #556174;
+  font-size: 9px;
+}
+
+.historikk-work-overview .department-row > strong {
+  color: #3f495a;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.historikk-work-overview .department-name {
+  min-width: 0;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 7px;
+}
+
+.historikk-work-overview .department-dot {
+  display: inline-block !important;
+  width: 7px !important;
+  height: 7px !important;
+  min-width: 7px !important;
+  min-height: 7px !important;
+  border-radius: 50% !important;
+}
+
+.historikk-work-overview .department-row.firstpacking .department-dot {
+  background: #e9363e;
+}
+
+.historikk-work-overview .department-row.raud .department-dot {
+  background: #ee951f;
+}
+
+.historikk-work-overview .department-row.filet .department-dot {
+  background: #416bb2;
+}
+
+.historikk-work-overview .department-row.total {
+  color: #263143;
+  font-weight: 700;
+}
+
+/* =========================================================
+   SAFETY: old standalone history/timeline must not render
+========================================================= */
+
+.tilsette-page .timeline,
+.tilsette-page .timeline-item {
+  display: none;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+  .tilsette-layout {
+    grid-template-columns: 280px minmax(0, 1fr);
+  }
+
+  .tilsette-toolbar {
+    grid-template-columns:
+      minmax(210px, 1.2fr) repeat(3, minmax(135px, 1fr))
+      auto;
+  }
+
+  .employee-header-content {
+    grid-template-columns: minmax(230px, 1.1fr) minmax(190px, 1fr) 125px 32px;
+  }
+
+  .historikk-work-overview .arbeid-toolbar {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1000px) {
+  .tilsette-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tilsette-search {
+    grid-column: 1 / -1;
+  }
+
+  .tilsette-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tilsette-list-card {
+    max-height: 360px;
+    overflow-y: auto;
+  }
+
+  .employee-header-content {
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 1fr) 32px;
+  }
+
+  .employee-header-meta {
+    display: none;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .overview-grid > .warning-card {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .historikk-work-overview .arbeid-main-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .tilsette-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .tilsette-search {
+    grid-column: auto;
+  }
+
+  .employee-header-content {
+    grid-template-columns: 1fr 32px;
+  }
+
+  .employee-contact-block {
+    display: none;
+  }
+
+  .overview-grid,
+  .tab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .historikk-work-overview .arbeid-toolbar {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+
+  .historikk-work-overview .arbeid-period {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .historikk-work-overview .arbeid-period-buttons {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .historikk-work-overview .arbeid-stat-grid {
+    grid-template-columns: repeat(2, minmax(130px, 1fr)) !important;
+  }
+
+  .historikk-work-overview .arbeid-department-content {
+    grid-template-columns: 1fr !important;
+  }
+}
