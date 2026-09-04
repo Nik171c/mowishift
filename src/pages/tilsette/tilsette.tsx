@@ -19,6 +19,7 @@ import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useMowiShiftStore, type MowiEmployee } from "@/data/mowishift-store";
+import EmployeeAbsenceTab from "./components/employee-absence-tab";
 
 /* =========================================================
    TYPES
@@ -134,6 +135,24 @@ export default function Tilsette() {
   /* =======================================================
      NEXT SHIFT
   ======================================================= */
+
+  const absenceRecord =
+    selectedEmployee.id === "MOWI-0456"
+      ? {
+          date: "2026-08-29",
+          reason: "sjukdom" as const,
+          shift: { id: "day", name: "Dag", start: "07:00", end: "15:00" },
+          department: "bla",
+          workplace: selectedEmployee.workplace ?? "Maskin A3",
+          replacementEmployeeId: "MOWI-1024",
+          message:
+            "Hei, eg har fått feber og blir heime i dag. Kan dessverre ikkje komme på jobb.",
+        }
+      : undefined;
+
+  const replacementEmployee = absenceRecord?.replacementEmployeeId
+    ? employees.find((employee) => employee.id === absenceRecord.replacementEmployeeId)
+    : undefined;
 
   const nextShift = schedule
     .filter(
@@ -760,11 +779,17 @@ export default function Tilsette() {
             <Overview employee={selectedEmployee} nextShift={nextShift} />
           )}
 
-          {/* =================================================
-              OTHER TABS
-              
-              Keep your existing implementations here.
-          ================================================= */}
+          {activeTab === "absence" && (
+            <EmployeeAbsenceTab
+              employee={selectedEmployee}
+              absence={absenceRecord}
+              replacement={replacementEmployee}
+              onNewAbsence={() =>
+                navigate(`/fravaer/registrer?employee=${selectedEmployee.id}`)
+              }
+              onGoToShiftExchange={() => navigate("/shift-exchange")}
+            />
+          )}
         </main>
       </div>
     </div>
